@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Tabla de usuarios
+  body
+    h1 #{title}
+    h1 Usuarios registrados 
+  table(style='width:100%',border='.5')
+      tr
+        th N°
+        th User
+        th Password
+        th facebook
+        th twitter
+        th gmail
+        th fecha
+      each item, index in data
+       tr
+        td= index
+        td= item.user
+        td= item.pass
+        td= item.facebook
+        td= item.twitter
+        td= item.gmail
+        td= item.date
+        td
+          form(action=`/${item._id}`,method='post',enctype='application/x-www-form-urlencoded')
+            //- input(type='text', value='delete', name='delete')
+            button(type='submit').
+              Delete
+  p Atras
+a(href='http://localhost:8080' ) Ir al home

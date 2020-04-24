@@ -1,15 +1,15 @@
-exports.success = function(req, res, message, status) {
-  res.status(status).send({
-    error: 'false',
-    body: message,
+
+
+exports.success = (req, res, data, error) => {
+  res.status(200).send({
+    error: "No hay error",
+    body: data
   })
 }
-exports.error = function(req, res, message, status) {
-  // return
-  console.log('[RESPONSE ERROR]', status)
-  res.status(500)
-  // .send({
-  //   error: message,
-  //   body: '',
-  // })
+
+exports.error = (req, res, error) => {
+  res.status(500).send({
+    error: status,
+    body: error,
+  })
 }

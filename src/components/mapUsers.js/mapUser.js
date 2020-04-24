@@ -18,7 +18,6 @@ const Test = ({ users }) => {
           </tr>
         </thead>
         <tbody>
-        
           <tr>
             <td>leo</td>
             <td>1234</td>

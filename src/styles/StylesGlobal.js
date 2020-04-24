@@ -5,7 +5,6 @@ export const StylesGlobal = createGlobalStyle`
     background: #ffffff;
     box-sizing: border-box;
     font-family: -Arial, Helvetica, sans-serif;
-    background: yellow;
   }
 ul, li, h1,h2,h3, p, button {
   margin: 0;
@@ -14,10 +13,13 @@ ul, li, h1,h2,h3, p, button {
 ul {
   list-style: none;
 }
+a {
+  text-decoration:none;
+}
 body {
   overscroll-behavior: none;
   height: 100vh;
-  width: 100%;
+  /* width: 100fr; */
 }
 
 

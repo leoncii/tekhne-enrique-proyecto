@@ -12,13 +12,23 @@ function añadirUser(usuario) {
 
 function borrar(id) {
   return Model.deleteOne({ _id: id })
-  // return Model.remove({ _id: id })
-  // const borrado =  await Model.deleteOne({ _id: id })
-  // return borrado
+}
+
+async function actualizar(id, user) {
+  console.log('--------------')
+  console.log('[PARAMS]: ', id)
+  console.log(user)
+  console.log('++++++++++++')
+
+  let myUserFound = await Model.findByIdAndUpdate(id, {
+    $set: user,
+  })
+  return myUserFound
 }
 
 module.exports = {
   getUsers,
   añadirUser,
   borrar,
+  actualizar,
 }

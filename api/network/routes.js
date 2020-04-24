@@ -1,14 +1,13 @@
 const express = require('express')
-const message = require('../components/message/network')
-const user = require('../components/user/network')
-const chat = require('../components/chat/network')
-const home = require('../components/home/network')
 
-const routes = function(server) {
-  server.use('/message', message)
-  server.use('/user', user)
-  server.use('/chat', chat)
-  server.use('/', home)
+const message = require('../components/message/network')
+const home = require('../components/home/network')
+const configurarUser = require('../components/configurar')
+
+const routes = function(app) {
+  app.use('/message', message)
+  app.use('/configurar', configurarUser)
+  app.use('/', home)
 }
 
 module.exports = routes
